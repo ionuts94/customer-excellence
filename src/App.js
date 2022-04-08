@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { configureFirebase } from "./utils/appUtils";
 
-function App() {
+// Pages and components
+import Home from "./pages/Home";
+import SignUp from "./pages/SignUp";
+import Login from './pages/Login';
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+
+const App = () => {
+  const [firebaseLoaded, setFirebaseLoaded] = useState();
+
+  useEffect(() => {
+    configureFirebase().then(() => setFirebaseLoaded(true));
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    { firebaseLoaded &&
+      <Routes>
+        <Route path="/sign_up" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={
+            <PrivateRoute fallbackRoute="login">
+              <Home />
+            </PrivateRoute>}
+        />
+      </Routes>
+    }
+    </>
   );
 }
 
