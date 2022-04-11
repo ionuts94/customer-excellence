@@ -1,40 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { getApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+// React and utils
+import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+
+// Redux
+import { useSelector } from 'react-redux';
 
 const PrivateRoute = ({ children, fallbackRoute }) => {
   const location = useLocation();
-  const firebaseApp = getApp();
-  const auth = getAuth(firebaseApp);
-  
-  const [user, setUser] = useState(auth.currentUser || '!fetched');
+  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setUser(user)
-    } else {
-      setUser(null);
-    }
-  });
-
-  if (user === '!fetched') {
-    // If user is not fully fetched then return an empty fragment
-    return <></>
-  }
-  else if (!user) {
-    // If user is fetched but the user is not authenticated then redirect the user to a fallback route
+  if (!isAuthenticated) {
     return <Navigate to={fallbackRoute} state={{ from: location }} />;
   } else {
-    // If user is fetched and authenticated then inject current signed user to children
-    const withAuthChildren = React.Children.toArray(children).map(child => {
-      return React.cloneElement(child, {
-        ...child.props,
-        authUser: auth.currentUser
-      })
-    })
-
-    return withAuthChildren;
+    return children;
   }
 }
 

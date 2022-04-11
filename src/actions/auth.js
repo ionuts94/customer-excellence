@@ -2,10 +2,6 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 
 export const register = async ({ email, password }) => {
   const auth = getAuth();
-
-
-  console.log(email);
-  console.log(password);
   
   // Create auth user
   let userCredentials;

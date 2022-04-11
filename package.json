@@ -15,6 +15,7 @@
     "react-redux-firebase": "^3.11.0",
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
+    "use-track-renders": "^1.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

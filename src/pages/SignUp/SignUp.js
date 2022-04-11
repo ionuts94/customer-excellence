@@ -1,6 +1,9 @@
+// React and utils
 import React, { useState } from 'react';
-import { register } from '../actions/auth';
 import { useNavigate } from 'react-router-dom';
+
+// Functions
+import { register } from '../../actions/auth';
 
 const SignUp = () => {
   const navigate = useNavigate();
