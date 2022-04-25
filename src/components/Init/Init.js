@@ -1,9 +1,9 @@
 //React and utils
 import React, { useState, useEffect } from 'react';
+import { auth } from '../../actions/init';
 
 // Firebase
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { getApp } from 'firebase/app';
+import { onAuthStateChanged } from 'firebase/auth';
 
 // Redux
 import { useDispatch } from 'react-redux';
@@ -11,8 +11,7 @@ import { setAuth } from '../../store/auth';
 
 const Init = ({ children }) => {
   const dispatch = useDispatch();
-  const firebaseApp = getApp();
-  const auth = getAuth(firebaseApp);
+
   const [isInited, setIsInited] = useState(false);
   const [user, setUser] = useState(auth.currentUser || '!fetched');
  
