@@ -1,0 +1,109 @@
+{
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question1",
+          "title": "Main question one",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.1",
+          "visibleIf": "{question1} <= 3",
+          "title": "Q1 - subquestion 1",
+          "enableIf": "{question1} <= 3",
+          "requiredIf": "{question1} <= 3",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.2",
+          "visibleIf": "{question1} <= 3",
+          "title": "Q1 - subquestion 2",
+          "enableIf": "{question1} <= 3",
+          "requiredIf": "{question1} <= 3",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.3",
+          "visibleIf": "{question1} >= 4",
+          "title": "Q1 - subquestion 3",
+          "enableIf": "{question1} >= 4",
+          "requiredIf": "{question1} >= 4",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.4",
+          "visibleIf": "{question1} >= 4",
+          "title": "Q1 - subquestion 4",
+          "enableIf": "{question1} >= 4",
+          "requiredIf": "{question1} >= 4",
+          "rateMax": 6
+        }
+      ]
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question2",
+          "title": "Main question 2",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question2.1",
+          "visibleIf": "{question2} <= 3",
+          "title": "Q2 - subquestion 1",
+          "enableIf": "{question2} <= 3",
+          "requiredIf": "{question2} <= 3",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question2.2",
+          "visibleIf": "{question2} <= 3",
+          "title": "Q2 - subquestion 2",
+          "enableIf": "{question2} <= 3",
+          "requiredIf": "{question2} <= 3",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question2.3",
+          "visibleIf": "{question2} >= 4",
+          "title": "Q2 - Subquestion 3",
+          "enableIf": "{question2} >= 4",
+          "requiredIf": "{question2} >= 4",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question2.4",
+          "visibleIf": "{question2} >= 4",
+          "title": "Q2 - subquestion 4",
+          "enableIf": "{question2} >= 4",
+          "requiredIf": "{question2} >= 4",
+          "rateMax": 6
+        }
+      ]
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "html",
+          "name": "ReviewSurvey",
+          "html": "<ReviewSurvey question={question} />"
+        }
+      ]
+    }
+  ]
+}

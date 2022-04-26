@@ -1,0 +1,115 @@
+{
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question1",
+          "title": "I get sufficient support from mymanager to reach my targets",
+          "isRequired": true,
+          "rateMax": 6
+        }
+      ]
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question1.1",
+          "title": "I need more coaching",
+          "isRequired": true,
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.2",
+          "title": "My manager is rarely available",
+          "isRequired": true,
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.3",
+          "title": "I need more training in...X, Y, Z",
+          "isRequired": true,
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.4",
+          "title": "We have no team sessions",
+          "isRequired": true,
+          "rateMax": 6
+        }
+      ],
+      "visibleIf": "{question1} <= 3",
+      "enableIf": "{question1} <= 3"
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question1.5",
+          "title": "I feel I am doing well on my own",
+          "isRequired": true,
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.6",
+          "title": "I would still like more training",
+          "isRequired": true,
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.7",
+          "title": "My manager is always on, mail, X, Y, Z",
+          "isRequired": true,
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.8",
+          "title": "I can easily influence my bonus",
+          "isRequired": true,
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.9",
+          "title": "I would like to get more support",
+          "isRequired": true,
+          "rateMax": 6
+        }
+      ],
+      "visibleIf": "{question1} >= 4",
+      "enableIf": "{question1} >= 4"
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question2",
+          "title": "We get sufficient training to sell well",
+          "rateMax": 6
+        }
+      ]
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "html",
+          "name": "ReviewSurvey",
+          "html": "<ReviewSurvey question={question} />"
+        }
+      ]
+    }
+  ]
+}

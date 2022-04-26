@@ -100,6 +100,16 @@
           "rateMax":6
         }
       ]
+    },
+    {
+      "name":"page5",
+      "elements":[
+        {
+          "type":"html",
+          "name":"ReviewSurvey",
+          "html":"<ReviewSurvey question={question} />"
+        }
+      ]
     }
   ]
 }

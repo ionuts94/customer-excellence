@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './customWidgets';
 
 // Modern theme
 import 'survey-core/modern.min.css';
@@ -13,11 +14,10 @@ const SurveyComponent = ({ surveyJson }) => {
 
   useEffect(() => {
     const prepareModel = () => {
-      const model = new Model(surveyJson)
-      model.showPreviewBeforeComplete = 'showAnsweredQuestions';
-      model.onCurrentPageChanged.add((survey) => {
-        console.log(survey);
-      })
+      const model = new Model(surveyJson);
+      // model.onCurrentPageChanged.add((survey) => {
+      //   console.log(survey);
+      // })
 
       setSurveyModel(model);
     }
