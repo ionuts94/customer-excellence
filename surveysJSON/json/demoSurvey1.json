@@ -17,7 +17,8 @@
           "title": "Q1 - subquestion 1",
           "enableIf": "{question1} <= 3",
           "requiredIf": "{question1} <= 3",
-          "rateMax": 6
+          "rateMax": 6,
+          "path": "left"
         },
         {
           "type": "rating",
@@ -26,7 +27,8 @@
           "title": "Q1 - subquestion 2",
           "enableIf": "{question1} <= 3",
           "requiredIf": "{question1} <= 3",
-          "rateMax": 6
+          "rateMax": 6,
+          "path": "left"
         },
         {
           "type": "rating",
@@ -35,7 +37,8 @@
           "title": "Q1 - subquestion 3",
           "enableIf": "{question1} >= 4",
           "requiredIf": "{question1} >= 4",
-          "rateMax": 6
+          "rateMax": 6,
+          "path": "right"
         },
         {
           "type": "rating",
@@ -44,7 +47,8 @@
           "title": "Q1 - subquestion 4",
           "enableIf": "{question1} >= 4",
           "requiredIf": "{question1} >= 4",
-          "rateMax": 6
+          "rateMax": 6,
+          "path": "right"
         }
       ]
     },
@@ -64,7 +68,8 @@
           "title": "Q2 - subquestion 1",
           "enableIf": "{question2} <= 3",
           "requiredIf": "{question2} <= 3",
-          "rateMax": 6
+          "rateMax": 6,
+          "path": "left"
         },
         {
           "type": "rating",
@@ -73,7 +78,8 @@
           "title": "Q2 - subquestion 2",
           "enableIf": "{question2} <= 3",
           "requiredIf": "{question2} <= 3",
-          "rateMax": 6
+          "rateMax": 6,
+          "path": "left"
         },
         {
           "type": "rating",
@@ -82,7 +88,8 @@
           "title": "Q2 - Subquestion 3",
           "enableIf": "{question2} >= 4",
           "requiredIf": "{question2} >= 4",
-          "rateMax": 6
+          "rateMax": 6,
+          "path": "right"
         },
         {
           "type": "rating",
@@ -91,7 +98,8 @@
           "title": "Q2 - subquestion 4",
           "enableIf": "{question2} >= 4",
           "requiredIf": "{question2} >= 4",
-          "rateMax": 6
+          "rateMax": 6,
+          "path": "right"
         }
       ]
     },

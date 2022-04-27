@@ -1,7 +1,7 @@
-import { CustomWidgetCollection } from 'survey-core'
+import  * as Survey  from 'survey-core';
 import { ReviewSurvey } from '../index';
 
-CustomWidgetCollection.Instance.addCustomWidget(
+Survey.CustomWidgetCollection.Instance.addCustomWidget(
   {
     name: 'ReviewSurvey',
     title: 'ReviewSurvey',
@@ -13,8 +13,35 @@ CustomWidgetCollection.Instance.addCustomWidget(
     },
     render: (question) => {
       return <ReviewSurvey question={question} />
+    },
+    activatedByChanged: function (activatedBy) {
+      Survey.JsonObject.metaData.addProperties("question", [
+        { name: "path", default: {} },
+      ]);
     }
-  }
+  },
+  "customtype"
+)
+
+Survey.CustomWidgetCollection.Instance.addCustomWidget(
+  {
+    name: 'RateQuestion',
+    title: 'RateQuestion',
+    isFit: (question) => {
+      return (
+        question.getType() === 'rating'
+      )
+    },
+    render: (question) => {
+      return <h1>question</h1>
+    },
+    activatedByChanged: function (activatedBy) {
+      Survey.JsonObject.metaData.addProperties("question", [
+        { name: "path", default: {} },
+      ]);
+    }
+  },
+  "customtype"
 )
 
 // Survey.CustomWidgetCollection.Instance.addCustomWidget(

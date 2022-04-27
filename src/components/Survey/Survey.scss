@@ -1,0 +1,47 @@
+.survey-page-container {
+  .page-questions-container {
+    .subquestions-container {
+      width: 95%;
+      margin-left: 5%;
+    }
+  }
+}
+
+.question-container {
+  .question-title {
+    font-size: 2rem;
+  }
+  .subquestion-title {
+    font-size: 1.5rem;
+  }
+  .main-rates-container {
+    .rate {
+      border: 1px solid black;
+      padding: .5rem 1rem;
+      margin: 0 .5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: grey;
+      }
+    }
+  }
+  .sub-rates-container {
+    .rate {
+      border: 1px solid black;
+      padding: .25rem .75rem;
+      margin: 0 .5rem;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: grey;
+      }
+    }
+  }
+}
+
+.selected {
+  background-color: rgba(100, 255, 100, .7);
+}
