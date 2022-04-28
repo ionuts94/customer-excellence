@@ -24,7 +24,7 @@ export const SurveyPage = ({ page, pageIndex, updateSurveyState }) => {
               if (index === 0) {
                 return null;
               }
-              if (question.currentAnswer) {
+              if (question.currentAnswer > -1) {
                 return <SurveyQuestion 
                   key={key}
                   question={question}

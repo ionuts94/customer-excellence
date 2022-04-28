@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { SurveyPage } from '../index';
 
-const ReviewSurvey = ({ question }) => {
+const ReviewSurvey = ({ question, updateQuestionPick }) => {
   const [pagesQuestions, setPagesQuestions] = useState();
   const [finalAnswers, setFinalAnswers] = useState();
 
   console.log(pagesQuestions);
+  console.log(question.data.data);
   const getPossition = (rate, minRate, maxRate) => {
     const mid = maxRate / 2;
     if (minRate <= rate && rate <= mid) {
@@ -18,27 +19,36 @@ const ReviewSurvey = ({ question }) => {
   }
 
   const updateSurveyState = (pageIndex, questionIndex, newRating) => {
+    console.log(question.data.data);
     const pQuestions = [...pagesQuestions];
+    const currentRating = pQuestions[pageIndex][questionIndex].currentAnswer;
+    const currentPossition = getPossition(currentRating, 1, 6);
+    const newPossition = getPossition(newRating, 1, 6);
+    const newSurveyData = question.data.data;
+    
     if (questionIndex === 0) {
-      const currentRating = pQuestions[pageIndex][questionIndex].currentAnswer;
-      const currentPossition = getPossition(currentRating, 1, 6);
-      const newPossition = getPossition(newRating, 1, 6);
-      console.log(currentPossition);
-      console.log(newPossition);
-
-      // if (currentPossition !== newPossition) {
-      //   pQuestions[pageIndex].forEach()
-      // }
+      if (currentPossition !== newPossition) {
+        for (let i = 1; i < pQuestions[pageIndex].length; i++) {
+          if (pQuestions[pageIndex][i].path !== newPossition) {
+            pQuestions[pageIndex][i].currentAnswer = undefined;
+            newSurveyData[pQuestions[pageIndex][i].name] = undefined;
+          } else {
+            pQuestions[pageIndex][i].currentAnswer = 0;
+            newSurveyData[pQuestions[pageIndex][i].name] = undefined;
+          }
+        }
+      }
     }
+    
+    newSurveyData[pQuestions[pageIndex][questionIndex].name] = newRating;
+    question.data.data = newSurveyData;
     pQuestions[pageIndex][questionIndex].currentAnswer = newRating;
     setPagesQuestions(pQuestions);
   }
 
-  const survey = question.data;
-  const answers = survey.data;
-  console.log(survey);
-
   useEffect(() => {
+    const survey = question.data;
+    const answers = survey.data;
     const pQuestions = [];
     survey.pages.forEach((page, index) => {
       if (index < survey.pages.length - 1) {
@@ -54,7 +64,7 @@ const ReviewSurvey = ({ question }) => {
       }
     })
     setPagesQuestions(pQuestions);
-  }, [])
+  }, [question])
 
   return (
     <div>
