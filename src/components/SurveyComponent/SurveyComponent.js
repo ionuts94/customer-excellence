@@ -6,6 +6,7 @@ import 'survey-core/modern.min.css';
 
 import { StylesManager, Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
+import { uploadResultsToFirebase } from '../../actions/surveys';
 
 StylesManager.applyTheme("modern");
 
@@ -15,6 +16,7 @@ const SurveyComponent = ({ surveyJson }) => {
   useEffect(() => {
     const prepareModel = () => {
       const model = new Model(surveyJson);
+      model.onComplete.add(uploadResultsToFirebase);
       // model.onCurrentPageChanged.add((survey) => {
       //   console.log(survey);
       // })

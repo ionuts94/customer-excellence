@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { v4 as uuid } from 'uuid';
 import { SurveyPage } from '../index';
 
-const ReviewSurvey = ({ question, updateQuestionPick }) => {
+const ReviewSurvey = ({ question }) => {
   const [pagesQuestions, setPagesQuestions] = useState();
-  const [finalAnswers, setFinalAnswers] = useState();
 
-  console.log(pagesQuestions);
-  console.log(question.data.data);
   const getPossition = (rate, minRate, maxRate) => {
     const mid = maxRate / 2;
     if (minRate <= rate && rate <= mid) {
@@ -19,7 +17,6 @@ const ReviewSurvey = ({ question, updateQuestionPick }) => {
   }
 
   const updateSurveyState = (pageIndex, questionIndex, newRating) => {
-    console.log(question.data.data);
     const pQuestions = [...pagesQuestions];
     const currentRating = pQuestions[pageIndex][questionIndex].currentAnswer;
     const currentPossition = getPossition(currentRating, 1, 6);
@@ -64,14 +61,16 @@ const ReviewSurvey = ({ question, updateQuestionPick }) => {
       }
     })
     setPagesQuestions(pQuestions);
-  }, [question])
+  }, [])
 
   return (
     <div>
       {pagesQuestions &&
         pagesQuestions.map((page, index) => {
+          const key = uuid();
           return (
             <SurveyPage 
+              key={key}
               page={page} 
               pageIndex={index} 
               updateSurveyState={updateSurveyState}
