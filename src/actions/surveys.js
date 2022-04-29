@@ -17,9 +17,27 @@ export const loadSurvey = async (surveyId) => {
 
 export const uploadResultsToFirebase = (survey) => {
   if (currentSurveyId) {
+    // Add questions titles to survey data 
+    const newSurveyData = {};
+    Object.entries(survey.data).forEach(entry => {
+      const [questionName, questionAnswer] = entry;
+      let questionTitle;
+      for (let page of survey.pages) {
+        const { title } = page.elements.find(question => question.name === questionName) || {};
+        if (title) {
+          questionTitle = title; 
+          break;
+        }
+      }
+      newSurveyData[questionName] = {
+        answer: questionAnswer,
+        title: questionTitle
+      }
+    })
+
     const surveyRef = doc(db, 'surveys', currentSurveyId);
     updateDoc(surveyRef, {
-      results: survey.data
+      results: newSurveyData
     });
   }
 }
