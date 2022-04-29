@@ -4,6 +4,7 @@ import { SurveyPage } from '../index';
 
 const ReviewSurvey = ({ question }) => {
   const [pagesQuestions, setPagesQuestions] = useState();
+  console.log(pagesQuestions);
 
   const getPossition = (rate, minRate, maxRate) => {
     const mid = maxRate / 2;
@@ -47,6 +48,7 @@ const ReviewSurvey = ({ question }) => {
     const survey = question.data;
     const answers = survey.data;
     const pQuestions = [];
+
     survey.pages.forEach((page, index) => {
       if (index < survey.pages.length - 1) {
         const questions = page.questions.map((question, index) => {
@@ -60,6 +62,22 @@ const ReviewSurvey = ({ question }) => {
         pQuestions.push(questions);
       }
     })
+
+    const newSurveyData = question.data.data;
+
+    pQuestions.forEach((page, pageIndex) => {
+      const mainQuestion = page[0];
+      
+      for (let i = 1; i < page.length; i++) {
+        const mainQuestionCurrentPossition = getPossition(mainQuestion.currentAnswer, 1, 6);
+        if (page[i].path !== mainQuestionCurrentPossition) {
+          pQuestions[pageIndex][i].currentAnswer = undefined;
+          newSurveyData[pQuestions[pageIndex][i].name] = undefined;
+        }
+      }
+    })
+    
+    question.data.data = newSurveyData;
     setPagesQuestions(pQuestions);
   }, [])
 
