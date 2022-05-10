@@ -1,0 +1,53 @@
+{
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question1",
+          "title": "Meeting preparation",
+          "isRequired": true
+        },
+        {
+          "type": "rating",
+          "name": "question2",
+          "title": "Product knowledge",
+          "isRequired": true
+        },
+        {
+          "type": "rating",
+          "name": "question3",
+          "title": "CRM usage",
+          "isRequired": true
+        },
+        {
+          "type": "rating",
+          "name": "question4",
+          "title": "Formulating value proposition",
+          "isRequired": true
+        },
+        {
+          "type": "rating",
+          "name": "question5",
+          "title": "Handing objections",
+          "isRequired": true
+        },
+        {
+          "type": "rating",
+          "name": "question6",
+          "title": "Putting in adequate effort",
+          "isRequired": true
+        },
+        {
+          "type": "rating",
+          "name": "question7",
+          "title": "Account management",
+          "isRequired": true
+        }
+      ],
+      "description": "Jane Doe"
+    }
+  ]
+}

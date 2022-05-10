@@ -1,0 +1,340 @@
+{
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question1",
+          "title": "I get the support from my manager I need to reach my targets",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question1.1",
+          "title": "I rarely get any support",
+          "visibleIf": "{question1} <= 3",
+          "requiredIf": "{question1} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question1.2",
+          "title": "I do not get sufficient training",
+          "visibleIf": "{question1} <= 3",
+          "requiredIf": "{question1} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question1.3",
+          "title": "I don't need support or training",
+          "visibleIf": "{question1} <= 3",
+          "requiredIf": "{question1} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question1.4",
+          "title": "I get some but not enough support",
+          "visibleIf": "{question1} >= 4",
+          "requiredIf": "{question1} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question1.5",
+          "title": "I get all the support I need",
+          "visibleIf": "{question1} >= 4",
+          "requiredIf": "{question1} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question1.6",
+          "title": "I get support, but need more training",
+          "visibleIf": "{question1} >= 4",
+          "requiredIf": "{question1} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        }
+      ]
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question2",
+          "title": "We all prepare client meetings in a structured manner",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question2.1",
+          "title": "Not at all",
+          "visibleIf": "{question2} <= 3",
+          "requiredIf": "{question2} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question2.2",
+          "title": "There is a structure but we don't use it",
+          "visibleIf": "{question2} <= 3",
+          "requiredIf": "{question2} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question2.3",
+          "title": "We each have our own way of preparing",
+          "visibleIf": "{question2} <= 3",
+          "requiredIf": "{question2} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question2.4",
+          "title": "Some but not all in the team use a structured approach",
+          "visibleIf": "{question2} >= 4",
+          "requiredIf": "{question2} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question2.5",
+          "title": "We all help out preparing meetings",
+          "visibleIf": "{question2} >= 4",
+          "requiredIf": "{question2} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question2.6",
+          "title": "We all prepare all meetings very well",
+          "visibleIf": "{question2} >= 4",
+          "requiredIf": "{question2} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        }
+      ]
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question3",
+          "title": "I get training or coaching from my manager at least once a month",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question3.1",
+          "title": "No training or coaching",
+          "visibleIf": "{question3} <= 3",
+          "requiredIf": "{question3} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question3.2",
+          "title": "Some training and coacing but it is not very good",
+          "visibleIf": "{question3} <= 3",
+          "requiredIf": "{question3} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question3.3",
+          "title": "Some training and coaching, but not every month",
+          "visibleIf": "{question3} <= 3",
+          "requiredIf": "{question3} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question3.4",
+          "title": "I get to talk to my manager, but no training or coaching",
+          "visibleIf": "{question3} >= 4",
+          "requiredIf": "{question3} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question3.5",
+          "title": "I get some training every month",
+          "visibleIf": "{question3} >= 4",
+          "requiredIf": "{question3} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question3.6",
+          "title": "I get training and coaching every month",
+          "visibleIf": "{question3} >= 4",
+          "requiredIf": "{question3} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        }
+      ]
+    },
+    {
+      "name": "page4",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question4",
+          "title": "We have a clear way to build sales skills in our team",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question4.1",
+          "title": "Not at all",
+          "visibleIf": "{question4} <= 3",
+          "requiredIf": "{question4} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question4.2",
+          "title": "We have a book, but we don't use it",
+          "visibleIf": "{question4} <= 3",
+          "requiredIf": "{question4} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question4.3",
+          "title": "We have had training, but long ago",
+          "visibleIf": "{question4} <= 3",
+          "requiredIf": "{question4} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question4.4",
+          "title": "Yes but it is up to me to develop skills",
+          "visibleIf": "{question4} >= 4",
+          "requiredIf": "{question4} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question4.5",
+          "title": "Yes but I don't need to develop skills",
+          "visibleIf": "{question4} >= 4",
+          "requiredIf": "{question4} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question4.6",
+          "title": "We all the level of skills we need to have",
+          "visibleIf": "{question4} >= 4",
+          "requiredIf": "{question4} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        }
+      ]
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "rating",
+          "name": "question5",
+          "title": "The sales support from HQ helps us meet our targets",
+          "rateMax": 6
+        },
+        {
+          "type": "rating",
+          "name": "question5.1",
+          "title": "No, we need different support",
+          "visibleIf": "{question5} <= 3",
+          "requiredIf": "{question5} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question5.2",
+          "title": "No we get no support",
+          "visibleIf": "{question5} <= 3",
+          "requiredIf": "{question5} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question5.3",
+          "title": "We get support, but it does not help",
+          "visibleIf": "{question5} <= 3",
+          "requiredIf": "{question5} <= 3",
+          "rateMax": 6,
+          "path": "left"
+        },
+        {
+          "type": "rating",
+          "name": "question5.4",
+          "title": "Yes they try, but little effect",
+          "visibleIf": "{question5} >= 4",
+          "requiredIf": "{question5} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question5.5",
+          "title": "Yes but we need more",
+          "visibleIf": "{question5} >= 4",
+          "requiredIf": "{question5} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        },
+        {
+          "type": "rating",
+          "name": "question5.6",
+          "title": "Yes they do a good job supporting us",
+          "visibleIf": "{question5} >= 4",
+          "requiredIf": "{question5} >= 4",
+          "rateMax": 6,
+          "path": "right"
+        }
+      ]
+    },
+    {
+      "name": "page6",
+      "elements": [
+        {
+          "type": "html",
+          "name": "ReviewSurvey",
+          "html": "<ReviewSurvey question={question} />"
+        }
+      ]
+    }
+  ]
+}

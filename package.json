@@ -8,6 +8,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^9.6.10",
+    "googleapis": "39",
     "node-sass": "^7.0.1",
     "prettier": "^2.6.2",
     "react": "^18.0.0",
