@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import { SurveyPage } from '../index';
+import './ReviewSurvey.scss';
 
 const ReviewSurvey = ({ question }) => {
   const [pagesQuestions, setPagesQuestions] = useState();
@@ -19,11 +20,11 @@ const ReviewSurvey = ({ question }) => {
 
   const updateSurveyState = (pageIndex, questionIndex, newRating) => {
     const pQuestions = [...pagesQuestions];
-    const {currentAnswer, rateMin, rateMax } = pQuestions[pageIndex][questionIndex];
+    const { currentAnswer, rateMin, rateMax } = pQuestions[pageIndex][questionIndex];
     const currentPath = getPath(currentAnswer, rateMin, rateMax);
     const newPath = getPath(newRating, rateMin, rateMax);
     const newSurveyData = question.data.data;
-    
+
     if (questionIndex === 0) {
       if (currentPath !== newPath) {
         for (let i = 1; i < pQuestions[pageIndex].length; i++) {
@@ -37,7 +38,7 @@ const ReviewSurvey = ({ question }) => {
         }
       }
     }
-    
+
     newSurveyData[pQuestions[pageIndex][questionIndex].name] = newRating;
     question.data.data = newSurveyData;
     pQuestions[pageIndex][questionIndex].currentAnswer = newRating;
@@ -70,11 +71,11 @@ const ReviewSurvey = ({ question }) => {
     pQuestions.forEach((page, pageIndex) => {
       const mainQuestion = page[0];
       const mainQuestionPath = getPath(
-        mainQuestion.currentAnswer, 
-        mainQuestion.rateMin, 
+        mainQuestion.currentAnswer,
+        mainQuestion.rateMin,
         mainQuestion.rateMax
       );
-      
+
       for (let i = 1; i < page.length; i++) {
         if (page[i].path !== mainQuestionPath) {
           pQuestions[pageIndex][i].currentAnswer = undefined;
@@ -82,21 +83,21 @@ const ReviewSurvey = ({ question }) => {
         }
       }
     })
-    
+
     question.data.data = newSurveyData;
     setPagesQuestions(pQuestions);
   }, [])
 
   return (
-    <div>
+    <div className='review-survey-container'>
       {pagesQuestions &&
         pagesQuestions.map((page, index) => {
           const key = uuid();
           return (
-            <SurveyPage 
+            <SurveyPage
               key={key}
-              page={page} 
-              pageIndex={index} 
+              page={page}
+              pageIndex={index}
               updateSurveyState={updateSurveyState}
             />
           )

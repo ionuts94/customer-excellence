@@ -8,7 +8,7 @@ export const SurveyPage = ({ page, pageIndex, updateSurveyState }) => {
       <h1>Page: {pageIndex + 1}</h1>
       <div className='page-questions-container'>
         <div className='main-question-container'>
-          <SurveyQuestion 
+          <SurveyQuestion
             question={page[0]}
             questionIndex={0}
             isMainQuestion={true}
@@ -25,7 +25,7 @@ export const SurveyPage = ({ page, pageIndex, updateSurveyState }) => {
                 return null;
               }
               if (question.currentAnswer > -1) {
-                return <SurveyQuestion 
+                return <SurveyQuestion
                   key={key}
                   question={question}
                   questionIndex={index}
@@ -42,7 +42,7 @@ export const SurveyPage = ({ page, pageIndex, updateSurveyState }) => {
   )
 }
 
-export const SurveyQuestion = ({question, pageIndex, questionIndex, isMainQuestion, maxRate, updateSurveyState}) => {
+export const SurveyQuestion = ({ question, pageIndex, questionIndex, isMainQuestion, maxRate, updateSurveyState }) => {
   const rateArray = [];
   for (let i = 1; i <= maxRate; i++) {
     rateArray.push(i);
@@ -50,25 +50,25 @@ export const SurveyQuestion = ({question, pageIndex, questionIndex, isMainQuesti
 
   return (
     <div className='question-container'>
-      <h1 className={`${isMainQuestion ? 'question-title' : 'subquestion-title'}`}>
+      <h2 className={`question-title ${!isMainQuestion ? 'smaller75' : ''}`}>
         {question.title}
-      </h1>
+      </h2>
 
       <div className={`${isMainQuestion ? 'main-rates-container' : 'sub-rates-container'}`}>
         {
           rateArray.map(rating => {
             const key = uuid()
             if (rating === question.currentAnswer) {
-              return <RatePick 
+              return <RatePick
                 key={key}
-                selected={true} 
-                number={rating} 
+                selected={true}
+                number={rating}
                 pageIndex={pageIndex}
                 questionIndex={questionIndex}
                 updateSurveyState={updateSurveyState}
               />
             }
-            return <RatePick 
+            return <RatePick
               key={key}
               number={rating}
               pageIndex={pageIndex}
@@ -82,9 +82,9 @@ export const SurveyQuestion = ({question, pageIndex, questionIndex, isMainQuesti
   );
 }
 
-const RatePick = ({number, selected, pageIndex, questionIndex, updateSurveyState}) => {
+const RatePick = ({ number, selected, pageIndex, questionIndex, updateSurveyState }) => {
   return (
-    <span 
+    <span
       className={`rate ${selected ? 'selected' : ''}`}
       onClick={() => updateSurveyState(pageIndex, questionIndex, number)}
     >

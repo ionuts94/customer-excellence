@@ -1,47 +1,69 @@
 .survey-page-container {
+  h1 {
+    font-size: 1.5rem;
+  }
+
   .page-questions-container {
     .subquestions-container {
-      width: 95%;
-      margin-left: 5%;
+      padding-left: 2.3125em;
     }
   }
 }
 
 .question-container {
   .question-title {
-    font-size: 2rem;
+    font-family: "Raleway";
+    font-size: 1.2em;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
   }
-  .subquestion-title {
-    font-size: 1.5rem;
-  }
-  .main-rates-container {
-    .rate {
-      border: 1px solid black;
-      padding: .5rem 1rem;
-      margin: 0 .5rem;
-      border-radius: 50%;
-      cursor: pointer;
-      
-      &:hover {
-        background-color: grey;
-      }
-    }
-  }
-  .sub-rates-container {
-    .rate {
-      border: 1px solid black;
-      padding: .25rem .75rem;
-      margin: 0 .5rem;
-      border-radius: 50%;
-      cursor: pointer;
 
-      &:hover {
-        background-color: grey;
-      }
-    }
+  .subquestion-title {}
+
+  .main-rates-container {}
+
+  .sub-rates-container {}
+}
+
+.question-title {
+  font-family: "Raleway";
+  font-size: 1.2em;
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.rate {
+  min-width: 2.3125em;
+  height: 2.3125em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #9f9f9f;
+  padding: 0 0.3125em;
+  border: solid 0.1875em #9f9f9f;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.13;
+  margin: 3px 0;
+  margin-right: 0.26em;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #9f9f9f;
+    color: white;
   }
 }
 
 .selected {
-  background-color: rgba(100, 255, 100, .7);
+  background-color: rgb(26, 179, 148);
+  border-color: rgb(26, 179, 148);
+  color: rgb(255, 255, 255);
 }
